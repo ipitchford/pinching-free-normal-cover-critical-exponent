@@ -1,0 +1,16 @@
+Producer environment (captured 1 September 2026)
+
+Platform: macOS host, arm64
+Python: 3.14.6
+TeX engine: XeTeX 3.141592653-2.6-0.999998, TeX Live 2026
+latexmk: 4.88
+Poppler pdftotext: 26.01.0 (`pdftotext -layout` for the receipt)
+qpdf: 12.3.2
+
+Python theorem-formula checks use only the standard library and are run under
+normal and optimized (`python3 -O`) modes.
+The PDF source resolves TeX Gyre Pagella/Heros/Cursor through TeX Live and
+bundles NotoSerifCJKtc-Regular.otf under SIL OFL 1.1 for the Traditional
+Chinese abstract. The build runs locally and in Ubuntu 24.04 CI. Cross-platform
+byte-identical PDF reproduction is not claimed; a complete normalized extracted
+text digest is checked instead.

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this unrefereed candidate, preserve its assurance boundary."
+title: "Pinching a free normal cover: variable critical exponent in reduced quasiconformal Teichmuller space"
+type: article
+authors:
+  - name: Anonymous
+date-released: 2026-09-01
+version: 0.2.0-candidate
+license: CC0-1.0
+keywords:
+  - Fuchsian group
+  - critical exponent
+  - quasiconformal Teichmuller space
+  - normal cover
+  - bottom of spectrum
+abstract: >-
+  An anonymous, AI-assisted, unrefereed all-Fuchsian strengthening candidate
+  related to AIM Problem 4.3, using a free normal cover and simultaneous collar
+  pinching.

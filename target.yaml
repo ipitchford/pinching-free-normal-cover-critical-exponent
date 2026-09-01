@@ -1,0 +1,42 @@
+target_id: aim-topology-0203-critical-exponent-variation
+problem_source: "M. Kapovich, Problem 4.3, Problems on Thurston Metric, AIM"
+source_url: "https://aimath.org/pastworkshops/lipschitzteichproblems.pdf"
+candidate_date: 2026-09-01
+intended_contribution_unit: theorem
+claim:
+  statement: |
+    For every g >= 2, the kernel of the epimorphism pi_1(S_g) -> F_g that
+    kills a disjoint cut system gives infinitely generated first-kind
+    Fuchsian groups in the all-Fuchsian locus of one reduced, surface-based
+    quasiconformal Teichmuller space and the corresponding AIM group-deformation
+    space. Along
+    simultaneous pinching of the cut curves, their critical exponents tend
+    to one from below, with 1-delta = O_g(ell). Hence the exponent
+    assumes infinitely many values in that space. This is an all-Fuchsian
+    strengthening of the broader group-deformation precedent and a direct AIM
+    solution candidate only under the reduced surface-based reading.
+  exclusions:
+    - no monotonicity
+    - no exact critical-exponent formula
+    - no classification theorem
+    - no injective parametrization of T_qc
+    - no quasi-Fuchsian deformation theorem
+    - no historical-priority or peer-review claim
+construction:
+  normal_subgroup: "K = ker(pi_1(S_g) -> F_g)"
+  deck_group: F_g
+  degeneration: "simultaneous Fenchel-Nielsen pinching of b_1,...,b_g"
+  spectral_test: "one compact lifted cell with fixed unit-width half-collar cutoff"
+dependencies:
+  - "Dougall-Sharp normal-subgroup amenability theorem"
+  - "Elstrodt-Patterson-Sullivan spectral formula"
+  - "collar lemma"
+  - "finite-type Fenchel-Nielsen coordinates"
+assurance:
+  written_proof: producer_complete
+  formula_replay: producer_passed
+  independent_reconstruction: not_assessed
+  formal_verification: not_assessed
+  specialist_review: not_assessed
+  peer_review: not_assessed
+  publication: internal_editorial_pass_with_notes

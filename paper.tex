@@ -1,0 +1,598 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amsthm,mathtools}
+\usepackage{unicode-math}
+\setmainfont[
+  UprightFont=texgyrepagella-regular.otf,
+  BoldFont=texgyrepagella-bold.otf,
+  ItalicFont=texgyrepagella-italic.otf,
+  BoldItalicFont=texgyrepagella-bolditalic.otf
+]{texgyrepagella-regular.otf}
+\setsansfont[
+  UprightFont=texgyreheros-regular.otf,
+  BoldFont=texgyreheros-bold.otf
+]{texgyreheros-regular.otf}
+\setmonofont{texgyrecursor-regular.otf}
+\setmathfont{texgyrepagella-math.otf}
+\newfontfamily\zhfont[
+  Path=assets/fonts/,
+  UprightFont=NotoSerifCJKtc-Regular.otf
+]{NotoSerifCJKtc-Regular.otf}
+\newfontfamily\zhfontbold[
+  Path=assets/fonts/,
+  UprightFont=NotoSerifCJKtc-Regular.otf,
+  FakeBold=2
+]{NotoSerifCJKtc-Regular.otf}
+\usepackage{booktabs,array,enumitem,microtype,xcolor}
+\usepackage[authoryear,round]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\hypersetup{
+  pdftitle={Pinching a free normal cover: variable critical exponent in reduced quasiconformal Teichmuller space},
+  pdfauthor={Anonymous candidate contribution},
+  pdfsubject={Unrefereed all-Fuchsian strengthening candidate for AIM Problem 4.3},
+  pdfkeywords={Fuchsian group, critical exponent, quasiconformal Teichmuller space, normal cover, bottom of spectrum, collar lemma}
+}
+
+\definecolor{statusred}{RGB}{137,34,44}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Unrefereed strengthening candidate}
+\fancyhead[R]{\small\itshape AIM Problem 4.3}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Hh}{\mathbb H^2}
+\newcommand{\Fg}{F_g}
+\newcommand{\Tqcred}{T_{\mathrm{qc}}^{\mathrm{red}}}
+\newcommand{\lamzero}{\lambda_0}
+
+\title{\textbf{Pinching a free normal cover:\\
+variable critical exponent in reduced quasiconformal Teichm\"uller space}}
+\author{Anonymous candidate contribution}
+\date{1 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give an explicit all-Fuchsian strengthening candidate related to
+M.~Kapovich's AIM Problem~4.3.
+For every closed oriented surface $S_g$ of genus $g\ge2$, fix the kernel $K$
+of the epimorphism $\pi_1(S_g)\to F_g$ that kills a disjoint cut system.
+For every marked closed hyperbolic metric $m$, the image $\Gamma_m$ of $K$
+under the Fuchsian holonomy is an infinitely generated Fuchsian group of the
+first kind.  Marked quasiconformal maps of the compact base lift to
+quasiconformal conjugacies of the groups $\Gamma_m$, so this gives a family in
+one reduced, surface-based quasiconformal Teichm\"uller space.  The quotient
+$F_g$ is nonamenable;
+the normal-subgroup theorem of Dougall and Sharp therefore gives
+$\delta(\Gamma_m)<1$ for every marked compact-base metric.  If the cut curves are
+simultaneously pinched to common length $\ell$, a compactly supported function
+on one lifted cut-surface cell has Rayleigh quotient
+$O_g(\ell)$.  The Elstrodt--Patterson--Sullivan formula then yields
+\[
+ \frac12<\delta(\Gamma_{m_\ell})<1,
+ \qquad
+ 1-\delta(\Gamma_{m_\ell})=O_g(\ell),
+ \qquad
+ \delta(\Gamma_{m_\ell})\longrightarrow1.
+\]
+Thus the critical exponent assumes infinitely many distinct values among the
+all-Fuchsian points of $\Tqcred(X_0)$.  Under the reduced surface-based reading
+of the AIM question this is a direct solution candidate; under the broader
+group-deformation reading it is an all-Fuchsian strengthening of an affirmative
+precedent of Astala and Zinsmeister.
+\end{abstract}
+
+\begingroup
+\XeTeXlinebreaklocale ``zh''
+\XeTeXlinebreakskip=0pt plus 1pt
+\zhfont
+\par\bigskip
+{\zhfontbold\large 中文摘要（繁體）\par}
+\smallskip
+本文提出 M.~Kapovich 之 AIM 問題 4.3 的一個明確解答候選。對每個虧格
+$g\ge2$ 的閉可定向曲面 $S_g$，固定滿同態
+$\pi_1(S_g)\to F_g$ 的核 $K$；此滿同態消去一組互不相交的割曲線。
+對任一有標記的閉雙曲度量 $m$，$K$ 在 Fuchsian 單值群中的像
+$\Gamma_m$ 是第一類且無限生成的 Fuchsian 群。緊緻底曲面之間的有標記
+擬共形映射可提升為 $\Gamma_m$ 之間的擬共形共軛，故所有這些群位於同一
+約化擬共形 Teichm\"uller 空間。商群 $F_g$ 非可均，因此 Dougall--Sharp 定理給出每一
+有限階段的 $\delta(\Gamma_m)<1$。若同時把割曲線壓縮至共同長度 $\ell$，
+則一個提升之割開胞腔上的緊支撐函數具有
+$O_g(\ell)$ 的 Rayleigh 商。Elstrodt--Patterson--Sullivan
+公式遂推出 $1/2<\delta(\Gamma_{m_\ell})<1$，且
+$\delta(\Gamma_{m_\ell})\to1$。因此臨界指數在同一擬共形變形空間中取得
+無限多個不同值。
+\endgroup
+
+\smallskip
+\noindent\emph{Translation note.} The Traditional Chinese abstract is a
+producer-generated rendering and was not independently assessed by a Chinese
+language reviewer; the English abstract controls if the two differ.
+
+\medskip
+\noindent\colorbox{statusred!8}{\parbox{0.95\linewidth}{
+\textcolor{statusred}{\textbf{Status.}} This is an anonymous, AI-assisted,
+unrefereed all-Fuchsian strengthening candidate.  It includes a complete written proof and
+producer-side formula checks, but no claim of historical priority, external
+specialist validation, independent reconstruction, formal proof verification,
+or peer review.  Candidate publication and DOI assignment do not alter those
+assurance limits.}}
+
+\medskip
+\noindent\textbf{2020 Mathematics Subject Classification.}
+Primary 30F35; Secondary 30F60, 58J50.\quad
+\textbf{Keywords.} Fuchsian group, critical exponent, quasiconformal
+Teichm\"uller space, normal cover, bottom of spectrum, collar degeneration.
+
+\tableofcontents
+
+\section{Introduction}
+
+Let $\Gamma_0$ be an infinitely generated Fuchsian group of the first kind.
+AIM Problem~4.3, attributed to M.~Kapovich, states:
+\begin{quote}
+``Construct an infinitely generated Fuchsian group $\Gamma_0$ of the first kind
+such that the critical exponents of some elements in $T_{\rm qc}(\Gamma_0)$ are
+different.''
+\end{quote}
+The problem arose at the 2012 AIM workshop, appears in the accessible AIM
+problem document dated 2014, and was published in handbook form in 2016
+\citep{AIM2014,Su2016}.  This question is meaningful because first kind means that the
+limit set is the entire boundary circle, whereas for an infinitely generated
+group the critical exponent can nevertheless be strictly smaller than one.
+The critical exponent measures exponential orbit growth: roughly, how rapidly
+the number of group translates within distance $R$ grows with $R$.  A first-kind
+group has the full boundary circle as limit set, but for an infinitely generated
+group this topological fact does not force exponent one.  Pinching the cut
+curves creates long collars, so a function concentrated on one lifted cell has
+very low spectral energy; the spectral formula then drives the exponent toward
+one.  Examples with exponent below one occur elsewhere
+\citep{Bishop2003,Lehnert2017}.
+
+There is an important scope boundary.  Under a broad group-deformation reading,
+the quasi-Fuchsian family of \citet{AstalaZinsmeister1995} appears already to
+give an affirmative existential example.  We therefore make no first-solution
+or priority claim.  The contribution here is a fixed-kernel construction that
+stays entirely in the all-Fuchsian locus, has every nondegenerate exponent below
+one, and approaches one with an explicit one-sided rate.  Under the narrower
+reduced surface-based, all-Fuchsian reading of the AIM question, it is a direct
+solution candidate.
+
+The construction here uses a fixed normal cover of a closed surface.  Its deck
+group is a nonabelian free group.  Two competing consequences of that choice
+drive the proof.  At every fixed metric, nonamenability makes the normal
+subgroup's critical exponent strictly smaller than the ambient lattice
+exponent.  On the other hand, when a complete cut system is pinched, one
+fundamental cell becomes separated from its neighbours by increasingly long
+collars.  A function supported on that cell has arbitrarily small Dirichlet
+energy.  The spectral formula converts this geometric degeneration into
+critical exponents tending to one.
+
+We use the nonnegative Laplacian.  For a complete surface $X$, its spectral
+bottom is
+\[
+ \lamzero(X)=\inf_{0\ne f\in C_c^\infty(X)}
+ \frac{\int_X |\nabla f|^2\,dA}{\int_X |f|^2\,dA}.
+\]
+For a nonelementary Fuchsian group $\Gamma$, the critical exponent is
+\[
+ \delta(\Gamma)=\inf\left\{s>0:
+ \sum_{\gamma\in\Gamma}e^{-s d(o,\gamma o)}<\infty\right\},
+\]
+independent of $o\in\Hh$.
+
+Fix a base metric $m_0$ and put $X_0=X_{m_0}$.  We use the reduced,
+surface-based convention of \citet{AlessandriniEtAl2012}: a point of
+$\Tqcred(X_0)$ is an equivalence class of a marked conformal surface $(Y,f)$,
+where $f:X_0\to Y$ is quasiconformal, and $(Y_1,f_1)$ and $(Y_2,f_2)$ are
+equivalent when a conformal map $c:Y_1\to Y_2$ is homotopic to
+$f_2\circ f_1^{-1}$.  In the reduced convention boundary components are
+preserved setwise rather than pointwise; the surfaces here have no boundary,
+so that distinction is moot.  The theorem concerns the Fuchsian uniformising
+groups of the marked surfaces constructed below.  It does not quantify over
+arbitrary quasi-Fuchsian sphere conjugates.
+
+For comparison with the original notation, write $T_{\rm qc}(\Gamma_0)$ for
+the reduced group quasiconformal deformation space: a quasiconformal sphere
+homeomorphism $W$ conjugating $\Gamma_0$ to a Kleinian group determines a
+point, and marked representatives that differ by M\"obius conjugacy determine
+the same point.  This is the only group-space structure used below.  M\"obius
+conjugacy preserves the critical exponent, since it acts isometrically on
+hyperbolic three-space.  Lemma~\ref{lem:qc} constructs such a sphere
+representative for every marked compact-base metric and shows that the entire
+family lies in the all-Fuchsian locus of $T_{\rm qc}(\Gamma_0)$.  Thus the
+construction produces points for the AIM notation without asserting a global
+identification of every group deformation with the surface-based space.
+
+\section{The fixed free normal cover}
+
+Fix $g\ge2$.  Choose a geometric symplectic basis
+$(a_1,b_1,\ldots,a_g,b_g)$ for $S_g$ so that the simple curves
+$b_1,\ldots,b_g$ are pairwise disjoint and their complement is connected.
+Thus
+\[
+ \pi_1(S_g)=\left\langle a_1,b_1,\ldots,a_g,b_g\ \middle|\
+ \prod_{i=1}^g[a_i,b_i]=1\right\rangle .
+\]
+Let $F_g=\langle x_1,\ldots,x_g\rangle$ and define
+\begin{equation}\label{eq:q}
+ q:\pi_1(S_g)\longrightarrow F_g,
+ \qquad q(a_i)=x_i,\qquad q(b_i)=1.
+\end{equation}
+The surface relator maps to the identity, and the images of the $a_i$ generate
+$F_g$; hence $q$ is an epimorphism.  Put $K=\ker q$.
+Thus there is an exact sequence
+\[
+ 1\longrightarrow K\longrightarrow\pi_1(S_g)
+ \mathrel{\mathop{\longrightarrow}^{q}}F_g\longrightarrow1.
+\]
+
+For a marked closed hyperbolic metric $m$ on $S_g$, choose its faithful
+Fuchsian holonomy
+\[
+ \rho_m:\pi_1(S_g)\longrightarrow \mathrm{PSL}(2,\mathbb R),
+\]
+write $L_m=\rho_m(\pi_1(S_g))$, and set
+\[
+ \Gamma_m=\rho_m(K),\qquad X_m=\Hh/\Gamma_m.
+\]
+Then $X_m\to S_m=\Hh/L_m$ is the regular cover with deck group $F_g$.
+Equivalently,
+\[
+ 1\longrightarrow\Gamma_m\longrightarrow L_m
+ \longrightarrow F_g\longrightarrow1.
+\]
+
+\begin{lemma}\label{lem:first-kind}
+For every $m$, the group $\Gamma_m$ is nonelementary, infinitely generated,
+and of the first kind.
+\end{lemma}
+
+\begin{proof}
+The subgroup $K$ is nontrivial because it contains each $b_i$.  Hence
+$\Gamma_m$ contains a hyperbolic element.  Its limit set is nonempty and,
+because $\Gamma_m\triangleleft L_m$, is invariant under $L_m$.  The limit set
+of the cocompact lattice $L_m$ is the full circle and is the minimal nonempty
+closed $L_m$-invariant subset of the boundary.  It follows that
+\[
+ \Lambda(\Gamma_m)=\Lambda(L_m)=\partial\Hh.
+\]
+In particular $\Gamma_m$ is nonelementary and of the first kind.
+
+Suppose that $\Gamma_m$ were finitely generated.  A finitely generated
+Fuchsian group without parabolics is convex cocompact
+\citep[see, for example,][]{Beardon1983}.  There are no parabolics here because
+$\Gamma_m$ is a subgroup of the cocompact torsion-free group $L_m$.  Since its
+limit set is the full circle, its convex hull is all of $\Hh$; convex
+cocompactness would therefore make $X_m=\Hh/\Gamma_m$ compact.  A compact
+cover of the compact surface $S_m$ has finite degree.  This contradicts
+$L_m/\Gamma_m\cong F_g$, which is infinite.  Thus $\Gamma_m$ is infinitely
+generated.
+\end{proof}
+
+\begin{lemma}\label{lem:qc}
+Fix a marked metric $m_0$.  For every marked closed hyperbolic metric $m$,
+the lifted marked surface $X_m$ represents a point of $\Tqcred(X_0)$, and its
+Fuchsian uniformising group is $\Gamma_m$.  Consequently the family
+$\{\Gamma_m:m\in\operatorname{Teich}(S_g)\}$ is a family of Fuchsian points in
+one reduced quasiconformal Teichm\"uller space.
+\end{lemma}
+
+\begin{proof}
+There is an orientation- and marking-preserving quasiconformal map
+$h:S_{m_0}\to S_m$.  Choose the lift
+$\widetilde h:\Hh\to\Hh$ that is equivariant for the marked holonomies.  Then
+\[
+ \widetilde h\,\rho_{m_0}(\gamma)\,\widetilde h^{-1}
+   =\rho_m(\gamma)\qquad(\gamma\in\pi_1(S_g)).
+\]
+Restricting this identity to the fixed subgroup $K$ gives
+$\widetilde h\Gamma_{m_0}\widetilde h^{-1}=\Gamma_m$.  The lift is
+quasiconformal and descends to the marked map $X_0\to X_m$, so it gives the
+asserted point of $\Tqcred(X_0)$.  The markings identify the same abstract
+kernel $K=\ker q$ at both ends.  Its boundary extension is quasisymmetric,
+and reflection across the boundary circle supplies a quasiconformal sphere
+extension $W_m$ satisfying
+$W_m\Gamma_{m_0}W_m^{-1}=\Gamma_m$.  Hence it also gives a point of
+$T_{\rm qc}(\Gamma_{m_0})$ in the original AIM notation.  If two surface
+representatives are equivalent, the conformal equivalence lifts to a M\"obius
+conjugacy of their uniformising groups; consequently their critical exponents
+agree.  That observation
+does not enlarge the theorem to arbitrary quasi-Fuchsian conjugates.  No
+injectivity claim for the induced map of Teichm\"uller spaces is needed.
+\end{proof}
+
+\section{Strict comparison with the ambient lattice}
+
+The ambient group $L_m$ is cocompact, hence convex cocompact, and
+$\delta(L_m)=1$.  The quotient
+\[
+ L_m/\Gamma_m\cong F_g
+\]
+is nonamenable because $g\ge2$.  The normal-subgroup theorem of
+\citet[Theorem~1.1]{DougallSharp2016} says that for a normal subgroup of a
+convex-cocompact group acting on a pinched Hadamard manifold, equality of
+critical exponents holds exactly when the quotient is amenable.  Here
+$\Hh$ is complete, simply connected, and has curvature $-1$; $L_m$ is
+nonelementary and cocompact, hence convex cocompact; $\Gamma_m\triangleleft
+L_m$; and $L_m/\Gamma_m\cong F_g$ is nonamenable.  Every hypothesis is
+therefore discharged, and
+\begin{equation}\label{eq:strict}
+ \delta(\Gamma_m)<\delta(L_m)=1
+ \qquad\text{for every marked metric }m.
+\end{equation}
+
+This is the only place where nonamenability is used.  Equation
+\eqref{eq:strict} also chooses the correct branch when the spectral formula is
+applied after degeneration.
+
+\section{Pinching the cut system}
+
+Extend $b_1,\ldots,b_g$ to a pants decomposition.  Fenchel--Nielsen
+coordinates give a path of marked closed hyperbolic metrics $m_\ell$,
+$0<\ell<\ell_*$, for which
+\[
+ \ell_{m_\ell}(b_i)=\ell\qquad(1\le i\le g).
+\]
+The remaining length and twist coordinates may be held fixed
+\citep{Buser1992}.  Let
+$X_\ell=X_{m_\ell}$ and $\Gamma_\ell=\Gamma_{m_\ell}$.
+
+Cutting $S_g$ along the $b_i$ produces a sphere $P$ with $2g$ boundary
+components.  The cover defined by \eqref{eq:q} can be constructed from copies
+of $P$ indexed by $F_g$: after orienting the two sides of each $b_i$, the
+corresponding sides of the copies labelled $h$ and $hx_i$ are glued.  Indeed,
+the curve $a_i$ is dual to $b_i$: after the cut it becomes an arc joining the
+two boundary copies of $b_i$, crosses no other cut curve, and its monodromy is
+$q(a_i)=x_i$.  In
+particular, $X_\ell$ contains an embedded compact lifted cell $P_\ell$.
+
+The collar lemma supplies pairwise disjoint open collars around the $b_i$ with
+half-width
+\begin{equation}\label{eq:w}
+ w=w(\ell)=\operatorname{arcsinh}\!\left(
+ \frac{1}{\sinh(\ell/2)}\right)
+ \longrightarrow\infty
+ \qquad(\ell\downarrow0)
+\end{equation}
+and metric
+\begin{equation}\label{eq:collar-metric}
+ ds^2=dr^2+\ell^2\cosh^2r\,d\theta^2,
+ \qquad -w<r<w,\quad \theta\in\mathbb R/\mathbb Z
+\end{equation}
+\citep{Keen1974,Buser1992}.  Each cut cell contains $2g$ half-collars,
+parametrized by $0\le r\le w$, with the cut geodesic at $r=0$.
+
+For sufficiently small $\ell$, $w(\ell)>1$.  Define
+$u_\ell:X_\ell\to[0,1]$ as follows.  On each of the $2g$ selected-cell
+half-collars put
+\[
+ u_\ell(r,\theta)=
+ \begin{cases}
+  r,&0\le r\le1,\\
+  1,&1\le r<w(\ell).
+ \end{cases}
+\]
+Put $u_\ell=1$ on the remainder of that cell and $u_\ell=0$ outside it.  The
+traces agree across every seam because $u_\ell=0$ at $r=0$.  Thus $u_\ell$ is
+a compactly supported Lipschitz
+function.  It belongs to $H^1_c(X_\ell)$ and can be approximated in $H^1$ by
+functions in $C_c^\infty(X_\ell)$, so it is admissible in the Rayleigh
+principle.
+
+\begin{proposition}\label{prop:lambda}
+There are constants $C_g>0$ and $\ell_g>0$ such that
+\[
+ 0\le \lamzero(X_\ell)\le
+ C_g\ell
+ \qquad(0<\ell<\ell_g).
+\]
+In particular $\lamzero(X_\ell)\to0$.
+\end{proposition}
+
+\begin{proof}
+The gradient is supported in $0<r<1$, where
+$|\nabla u_\ell|^2=1$.  The area element from
+\eqref{eq:collar-metric} is $\ell\cosh r\,dr\,d\theta$.  One half-collar
+therefore contributes
+\[
+ \int_0^1\!\int_0^1 \ell\cosh r\,dr\,d\theta
+ =\ell\sinh1.
+\]
+Summing over $2g$ half-collars gives the exact numerator
+\begin{equation}\label{eq:energy}
+ E_\ell=\int_{X_\ell}|\nabla u_\ell|^2\,dA
+ =2g\ell\sinh1.
+\end{equation}
+
+By Gauss--Bonnet, $\operatorname{area}(S_{m_\ell})=4\pi(g-1)$.  Each of the
+$2g$ width-one transition strips has area $\ell\sinh1$.  Hence the plateau on
+which $u_\ell=1$ has area at least
+\begin{equation}\label{eq:core-area}
+ D_\ell=4\pi(g-1)-2g\ell\sinh1.
+\end{equation}
+For all sufficiently small $\ell$, specifically whenever
+$2g\ell\sinh1\le2\pi(g-1)$, we have
+$D_\ell\ge2\pi(g-1)>0$, and therefore
+\[
+ \int_{X_\ell}u_\ell^2\,dA\ge D_\ell\ge2\pi(g-1).
+\]
+The Rayleigh principle and \eqref{eq:energy} give
+\[
+ \lamzero(X_\ell)
+ \le\frac{E_\ell}{\int u_\ell^2}
+ \le\frac{g\sinh1}{\pi(g-1)}\,\ell.
+\]
+Thus one may take $C_g=g\sinh1/[\pi(g-1)]$ after decreasing $\ell_g$ if
+necessary.
+\end{proof}
+
+\section{Critical exponents and the all-Fuchsian conclusion}
+
+For any nonelementary Fuchsian group $\Gamma$, the
+Elstrodt--Patterson--Sullivan formula, in the nonnegative-Laplacian convention,
+is
+\begin{equation}\label{eq:eps}
+ \lamzero(\Hh/\Gamma)=
+ \begin{cases}
+  \tfrac14, & \delta(\Gamma)\le\tfrac12,\\[2mm]
+  \delta(\Gamma)(1-\delta(\Gamma)), & \delta(\Gamma)\ge\tfrac12.
+ \end{cases}
+\end{equation}
+See \citet[Theorem~2.17, p.~333]{Sullivan1987}.  Its assumptions are met:
+$\Gamma_\ell$ is torsion-free, discrete, and nonelementary; $X_\ell$ is a
+complete curvature-$-1$ surface; and our $\lamzero$ uses the nonnegative
+Laplacian.  We can now state the result.
+
+\begin{theorem}[All-Fuchsian strengthening candidate for AIM Problem 4.3]\label{thm:main}
+For every $g\ge2$, the group $\Gamma_0=\Gamma_{m_0}$ constructed above is an
+infinitely generated Fuchsian group of the first kind for which the critical
+exponent takes infinitely many distinct values among the Fuchsian points of
+$\Tqcred(X_0)$.  More
+precisely, along the simultaneous pinching family, for all sufficiently small
+$\ell$,
+\[
+ \frac12<\delta(\Gamma_\ell)<1,
+ \qquad
+ 0<1-\delta(\Gamma_\ell)
+ \le 2C_g\ell,
+\]
+and $\delta(\Gamma_\ell)\to1$ as $\ell\downarrow0$.
+\end{theorem}
+
+\begin{proof}
+Lemmas~\ref{lem:first-kind} and \ref{lem:qc} give the required group and place
+the whole family in $\Tqcred(X_0)$.  By
+Proposition~\ref{prop:lambda}, $\lamzero(X_\ell)<1/4$ for all sufficiently
+small $\ell$.  Formula \eqref{eq:eps} then rules out
+$\delta(\Gamma_\ell)\le1/2$, so
+\[
+ \lamzero(X_\ell)=
+ \delta(\Gamma_\ell)(1-\delta(\Gamma_\ell)).
+\]
+Equation \eqref{eq:strict} supplies $\delta(\Gamma_\ell)<1$.  Consequently
+\[
+ 0<1-\delta(\Gamma_\ell)
+ =\frac{\lamzero(X_\ell)}{\delta(\Gamma_\ell)}
+ <2\lamzero(X_\ell)
+ \le2C_g\ell.
+\]
+This proves $\delta(\Gamma_\ell)\to1$ from below.  No exponent belonging to a
+marked compact-base metric is one, so the values along any sequence
+$\ell_n\downarrow0$ cannot form a finite
+set: a finite set contained in $(-\infty,1)$ has maximum strictly smaller than
+one.  Thus infinitely many values are distinct, and in particular the
+critical exponent is nonconstant among the Fuchsian points of
+$\Tqcred(X_0)$.
+\end{proof}
+
+\begin{remark}
+The proof does not show that $\delta(\Gamma_\ell)$ is monotone in $\ell$.
+It also does not identify an exact formula for the exponent.  The explicit
+rate is one-sided and is inherited from a single fixed-width test function.
+The symbol $\ell=0$ denotes a boundary degeneration, not a metric or a point
+of the asserted family.
+\end{remark}
+
+\section{Relation to previous work}
+
+\citet{AstalaZinsmeister1995} used a normal cover of a compact genus-three
+surface with abelian deck group $\mathbb Z^3$ and holomorphic quasi-Fuchsian
+deformations to exhibit variation of the Poincar\'e exponent, including values
+above one.  Under the broad group-deformation interpretation of
+$T_{\rm qc}(\Gamma_0)$, this appears already to answer the existential AIM
+question affirmatively.  The present theorem is therefore positioned as an
+all-Fuchsian strengthening and alternative construction, and as a direct
+solution candidate only under the reduced surface-based, all-Fuchsian reading.
+It is not the same family: here the deck group is the
+nonamenable free group $F_g$, every compact-base exponent is below one, and
+pinching makes the exponents approach one from below.  Bishop's
+$\delta$-stability results and the later Ruelle-property work concern the
+relation between exponent, limit-set dimension, and quasi-Fuchsian
+deformation \citep{Bishop2003,HuoZinsmeister2022}.  Regular covers and the
+sharp lower threshold $1/2$ for their exponents are studied by
+\citet{BonfertTaylorEtAl2012}.  These results delimit the contribution: the
+claim here is the fixed-kernel, all-Fuchsian pinching construction in reduced
+surface-based quasiconformal Teichm\"uller space, not a general deformation or
+stability theorem.
+
+\section{Dependency and limitation statement}
+
+The family construction, quasiconformal lift, collar function, energy
+integral, area estimate, and final algebra are given explicitly.  The proof
+imports two decisive structural results: the Dougall--Sharp normal-subgroup
+amenability criterion and the Elstrodt--Patterson--Sullivan spectral formula.
+Dougall--Sharp Theorem~1.1 is applied with $X=\Hh$, $\Gamma=L_m$, and
+$\Gamma_0=\Gamma_m$; Sullivan Theorem~2.17 is applied in dimension $d=1$ to
+$\Hh/\Gamma_\ell$.  The hypothesis maps are also recorded in
+\texttt{PROOF\_OBLIGATIONS.md}.  The argument uses standard finite-type
+Teichm\"uller and collar theorems.  The
+accompanying program recomputes only the explicit collar formulas for sample
+parameters; it does not verify these external theorems or replace the
+universal written argument.
+
+A bounded search through the AIM source, arXiv, publisher and author-hosted
+primary papers located the adjacent work just described but did not locate
+this exact fixed free-normal-cover, all-Fuchsian pinching statement.  That
+negative search evidence is not a priority claim.  Specialist review and
+exhaustive MathSciNet/zbMATH searching remain open assurance steps.
+
+\section*{Data and materials availability}
+
+There are no empirical data.  The local research package contains the LaTeX
+and Markdown manuscripts, bibliography, source and claim ledgers,
+standard-library formula checker, mutation tests, build scripts, PDF, and
+cryptographic manifest.  The PDF is visually checked but untagged; the Markdown
+manuscript is the accessible-text fallback, with the remaining limitation that
+its mathematics is linearized plain text rather than fully semantic math.
+Public repository and archival identifiers, when
+assigned, are recorded in the release metadata; their existence does not
+increase the mathematical assurance level.
+
+\section*{Ethics statement}
+
+This theoretical mathematics work uses no human participants, personal data,
+animals, clinical material, or field interventions.  No ethics approval was
+required.
+
+\section*{Author contributions (CRediT)}
+
+Anonymous candidate contribution: Conceptualization, Formal analysis,
+Methodology, Software, Validation, Writing---original draft,
+and Writing---review \& editing.  Operational provenance and AI assistance are
+reported separately below; no AI system is listed as an author.
+
+\section*{Funding}
+
+No external funding was declared for this candidate.
+
+\section*{Competing interests}
+
+No competing interests were declared.
+
+\section*{AI-use disclosure}
+
+OpenAI Codex was used to search and inspect sources, develop and stress-test
+the construction, draft and typeset the manuscript, write corroborative
+checks, and assemble the local package.  The workflow is producer-side and
+does not constitute independent mathematical validation.  A human publisher
+or reviewer should verify the proof, citations, attribution, and novelty
+boundary before any public release.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

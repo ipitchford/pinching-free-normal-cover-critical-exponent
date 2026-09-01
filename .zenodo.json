@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "title": "Pinching a free normal cover: variable critical exponent in reduced quasiconformal Teichmuller space",
+    "upload_type": "publication",
+    "publication_type": "workingpaper",
+    "description": "Anonymous, AI-assisted, unrefereed all-Fuchsian strengthening candidate related to AIM Problem 4.3. A fixed free normal cover gives all-Fuchsian points in one reduced quasiconformal Teichmuller space whose critical exponents take infinitely many values, with 1-delta=O_g(ell) along the stated pinching family. Under a broad group-deformation reading, Astala--Zinsmeister (1995) appears already to give an affirmative existential precedent; this is a direct AIM solution candidate only under the reduced surface-based reading. Candidate publication does not imply independent reconstruction, specialist validation, formal verification, peer review, historical priority, or endorsement.",
+    "creators": [
+      {
+        "name": "Anonymous"
+      }
+    ],
+    "license": "cc-zero",
+    "access_right": "open",
+    "version": "0.2.0-candidate",
+    "publication_date": "2026-09-01",
+    "keywords": [
+      "Fuchsian groups",
+      "critical exponent",
+      "reduced quasiconformal Teichmuller space",
+      "normal covers",
+      "bottom of spectrum",
+      "AIM Problem 4.3",
+      "unrefereed all-Fuchsian strengthening candidate"
+    ],
+    "related_identifiers": []
+  }
+}

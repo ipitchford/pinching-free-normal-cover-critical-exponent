@@ -1,0 +1,27 @@
+name: verify-release-candidate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned-platform TeX and PDF tools
+        run: >-
+          sudo apt-get update && sudo apt-get install -y
+          texlive-xetex texlive-latex-extra texlive-bibtex-extra
+          tex-gyre poppler-utils qpdf
+      - name: Rebuild reader PDF from source
+        run: bash build_paper.sh
+      - name: Run normal and optimized replay
+        run: bash run_all.sh

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.2-confirmation-target-replay",
+  "workId": "aim-topology-0203-critical-exponent-variation",
+  "capturedAt": "2026-09-01T10:58:17Z",
+  "status": "PASS",
+  "role": "post-repair confirmation target",
+  "assuranceClass": "producer-side deterministic replay",
+  "cleanDirectory": "/tmp/aim0203-confirm.GnU6TV/replay",
+  "replayOutputSha256": "734713e7ae14e7dd139bb33af2b58d170ad86c9dc213b4f688105b5542349df8",
+  "replayedManifest": {
+    "sha256": "02ae4230854ef9f6caa49907e94b356ef24ad5686c97b77cf72f0ee6b6cc5e3f",
+    "fileCount": 53,
+    "convention": "All distributable payload files except MANIFEST.sha256, REPLAY_RECEIPT.md, and REPLAY_RECEIPT.json; exclusions avoid a circular seal. The outer archive checksum binds the complete ZIP."
+  },
+  "checks": {
+    "formulaSamplesPassedNormal": 42,
+    "formulaSamplesPassedOptimized": 42,
+    "unitAndMutationTestsPassedNormal": 16,
+    "unitAndMutationTestsPassedOptimized": 16,
+    "sourceParity": "PASS",
+    "pdfTextGate": "PASS",
+    "completeNormalizedPdfTextDigest": "PASS",
+    "rawTexLeakageGate": "PASS",
+    "qpdfStructure": "PASS",
+    "manifestCompleteness": "PASS",
+    "packageGate": "PASS",
+    "readOnlyReplay": "PASS"
+  },
+  "objects": {
+    "paper.pdf": {
+      "sha256": "cfe29bf42f5656aeaa91eb27c3469c2e21c71b17bb6dc9dc0cfc5d4f8bccdd4c",
+      "bytes": 125993,
+      "pages": 9,
+      "pageSize": "A4",
+      "tagged": false
+    },
+    "paper.tex": {
+      "sha256": "eb0be745d45f52116f7ad9544f10fb64af83112c80aa4e91c47e325351c21f94"
+    },
+    "paper.md": {
+      "sha256": "5d620308a90293642c1743256da5fcce462a579b108b44608754c12b46d1dcee"
+    },
+    "PDF_TEXT.sha256": {
+      "sha256": "b5c61bfaa68264cb37c1868f63c5651373e6dc259a852d037ededd65140ec688"
+    }
+  },
+  "textExtraction": {
+    "executable": "/opt/homebrew/bin/pdftotext",
+    "version": "26.01.0",
+    "command": "pdftotext -layout paper.pdf raw.txt",
+    "rawBytes": 31307,
+    "rawSha256": "17a5e285d6323b59d5e70f4e22cf1ce997980b51d46e2eeb66f231b7bca84020",
+    "normalization": "ASCII-whitespace split and single-space join, followed by one newline",
+    "normalizedBytes": 25838,
+    "normalizedSha256": "1ef1c843fe658115f7905b850055b206bbc42bd51a15eb92bd9d7fd2fad517e9"
+  },
+  "supersedes": "The pre-editorial 43-file, 8-page, 14-test receipt.",
+  "claimCeiling": "Successful producer-side execution, PDF extraction, and payload completeness only; not independent reconstruction, specialist review, peer review, formal proof, or novelty determination."
+}
