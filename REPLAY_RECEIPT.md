@@ -6,7 +6,7 @@ Role: **public-release payload replay**
 Assurance class: **producer-side deterministic replay**
 
 The DOI-bearing public-release manifest contains 55 files and has SHA-256
-`80e2bff73e724e8dd915bfccf97c2145416f4293d56dcc02d058b357b9e5e34a`.
+`d2500a9000574481a39ce036e0482eee19655ec3823f78595b69bbdb04ad9d52`.
 The exact inventory plus the manifest and receipt surfaces was extracted in a
 newly created host temporary directory; `bash run_all.sh` passed. The captured
 replay output, after replacing only unittest's variable
@@ -34,7 +34,7 @@ binds the complete ZIP.
 | `paper.pdf` | `99237675ba1a60d1ebd538c83a082cadfd39bc0cfbf3a2c8e91bcd6f03a91cc5` | 126,394 bytes; 9 A4 pages; untagged |
 | `paper.tex` | `47930c1c525972b93c7704d901590b2fa1204fc0f8f63d3363f3f0f315391227` | canonical source |
 | `paper.md` | `b409448ca63d4e0e0f5456e4e8bd5131c598ec191b72d4cbffb85a94adb75922` | accessible-text fallback |
-| `MANIFEST.sha256` | `80e2bff73e724e8dd915bfccf97c2145416f4293d56dcc02d058b357b9e5e34a` | 55 payload entries |
+| `MANIFEST.sha256` | `d2500a9000574481a39ce036e0482eee19655ec3823f78595b69bbdb04ad9d52` | 55 payload entries |
 
 ## Extraction convention
 

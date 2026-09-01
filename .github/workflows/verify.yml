@@ -20,7 +20,8 @@ jobs:
         run: >-
           sudo apt-get update && sudo apt-get install -y
           texlive-xetex texlive-latex-extra texlive-bibtex-extra
-          tex-gyre latexmk poppler-utils qpdf
+          tex-gyre fonts-texgyre fonts-texgyre-math
+          latexmk poppler-utils qpdf
       - name: Rebuild reader PDF from source
         run: bash build_paper.sh
       - name: Run normal and optimized replay

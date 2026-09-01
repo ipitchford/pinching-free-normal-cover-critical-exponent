@@ -9,7 +9,7 @@
   "normalizedReplayOutputSha256": "fa63902f65b952735acca8c0ae8bb6a7628c07312b7dce6c7a6d91102b6a92bc",
   "replayOutputNormalization": "Replace unittest lines matching 'Ran 16 tests in [0-9.]+s' with 'Ran 16 tests in <elapsed>s'; leave all other bytes unchanged.",
   "replayedManifest": {
-    "sha256": "80e2bff73e724e8dd915bfccf97c2145416f4293d56dcc02d058b357b9e5e34a",
+    "sha256": "d2500a9000574481a39ce036e0482eee19655ec3823f78595b69bbdb04ad9d52",
     "fileCount": 55,
     "convention": "All distributable payload files except MANIFEST.sha256, REPLAY_RECEIPT.md, and REPLAY_RECEIPT.json; exclusions avoid a circular seal. The outer archive checksum binds the complete ZIP."
   },
