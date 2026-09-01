@@ -280,11 +280,12 @@ collision was located in the bounded search, but that is not a priority claim.
 ## Declarations
 
 - **Data and materials:** no empirical data; all manuscript and replay files
-  are in the research package. The PDF is visually checked but untagged;
+  are in the research package. Public repository:
+  `https://github.com/ipitchford/pinching-free-normal-cover-critical-exponent`;
+  version DOI: `https://doi.org/10.5281/zenodo.22229561`. The PDF is visually checked but untagged;
   `paper.md` is the accessible-text fallback, with linearized plain-text rather
   than fully semantic mathematics. Public repository and archival identifiers,
-  when assigned, are recorded in the release metadata and do not increase the
-  mathematical assurance level.
+  these identifiers do not increase the mathematical assurance level.
 - **Ethics:** no human participants, personal data, animals, clinical
   material, or field interventions were used.
 - **Author contributions (CRediT):** Anonymous candidate contribution —

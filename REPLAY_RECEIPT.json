@@ -1,15 +1,16 @@
 {
-  "schemaVersion": "1.2-confirmation-target-replay",
+  "schemaVersion": "1.3-public-release-replay",
   "workId": "aim-topology-0203-critical-exponent-variation",
-  "capturedAt": "2026-09-01T10:58:17Z",
+  "capturedAt": "2026-09-01T11:10:56Z",
   "status": "PASS",
-  "role": "post-repair confirmation target",
+  "role": "public-release payload replay",
   "assuranceClass": "producer-side deterministic replay",
-  "cleanDirectory": "/tmp/aim0203-confirm.GnU6TV/replay",
-  "replayOutputSha256": "734713e7ae14e7dd139bb33af2b58d170ad86c9dc213b4f688105b5542349df8",
+  "cleanDirectory": "host-generated fresh temporary directory",
+  "normalizedReplayOutputSha256": "fa63902f65b952735acca8c0ae8bb6a7628c07312b7dce6c7a6d91102b6a92bc",
+  "replayOutputNormalization": "Replace unittest lines matching 'Ran 16 tests in [0-9.]+s' with 'Ran 16 tests in <elapsed>s'; leave all other bytes unchanged.",
   "replayedManifest": {
-    "sha256": "02ae4230854ef9f6caa49907e94b356ef24ad5686c97b77cf72f0ee6b6cc5e3f",
-    "fileCount": 53,
+    "sha256": "80e2bff73e724e8dd915bfccf97c2145416f4293d56dcc02d058b357b9e5e34a",
+    "fileCount": 55,
     "convention": "All distributable payload files except MANIFEST.sha256, REPLAY_RECEIPT.md, and REPLAY_RECEIPT.json; exclusions avoid a circular seal. The outer archive checksum binds the complete ZIP."
   },
   "checks": {
@@ -28,31 +29,31 @@
   },
   "objects": {
     "paper.pdf": {
-      "sha256": "cfe29bf42f5656aeaa91eb27c3469c2e21c71b17bb6dc9dc0cfc5d4f8bccdd4c",
-      "bytes": 125993,
+      "sha256": "99237675ba1a60d1ebd538c83a082cadfd39bc0cfbf3a2c8e91bcd6f03a91cc5",
+      "bytes": 126394,
       "pages": 9,
       "pageSize": "A4",
       "tagged": false
     },
     "paper.tex": {
-      "sha256": "eb0be745d45f52116f7ad9544f10fb64af83112c80aa4e91c47e325351c21f94"
+      "sha256": "47930c1c525972b93c7704d901590b2fa1204fc0f8f63d3363f3f0f315391227"
     },
     "paper.md": {
-      "sha256": "5d620308a90293642c1743256da5fcce462a579b108b44608754c12b46d1dcee"
+      "sha256": "b409448ca63d4e0e0f5456e4e8bd5131c598ec191b72d4cbffb85a94adb75922"
     },
     "PDF_TEXT.sha256": {
-      "sha256": "b5c61bfaa68264cb37c1868f63c5651373e6dc259a852d037ededd65140ec688"
+      "sha256": "0d259cc4137754ab04206dbd019a99eb701beeb759e1b1165659018083e9323a"
     }
   },
   "textExtraction": {
     "executable": "/opt/homebrew/bin/pdftotext",
     "version": "26.01.0",
     "command": "pdftotext -layout paper.pdf raw.txt",
-    "rawBytes": 31307,
-    "rawSha256": "17a5e285d6323b59d5e70f4e22cf1ce997980b51d46e2eeb66f231b7bca84020",
+    "rawBytes": 31375,
+    "rawSha256": "d9354b9f01d654de16259f9c314661bd39e60987e276d7952f71d7a05d8b0dfe",
     "normalization": "ASCII-whitespace split and single-space join, followed by one newline",
-    "normalizedBytes": 25838,
-    "normalizedSha256": "1ef1c843fe658115f7905b850055b206bbc42bd51a15eb92bd9d7fd2fad517e9"
+    "normalizedBytes": 25905,
+    "normalizedSha256": "38e72f8d56e40e922b32e3b417274270fc50213d36fb0d5e89b606f75f5b0bff"
   },
   "supersedes": "The pre-editorial 43-file, 8-page, 14-test receipt.",
   "claimCeiling": "Successful producer-side execution, PDF extraction, and payload completeness only; not independent reconstruction, specialist review, peer review, formal proof, or novelty determination."

@@ -57,3 +57,7 @@ peer review.
 Publication records and public identifiers are documented in `STATUS.md` and
 the release metadata when assigned. They do not imply external specialist
 validation, independent reconstruction, formal verification, or peer review.
+
+Public repository:
+<https://github.com/ipitchford/pinching-free-normal-cover-critical-exponent>
+Version DOI: <https://doi.org/10.5281/zenodo.22229561>

@@ -7,6 +7,9 @@ authors:
 date-released: 2026-09-01
 version: 0.2.0-candidate
 license: CC0-1.0
+doi: 10.5281/zenodo.22229561
+repository-code: https://github.com/ipitchford/pinching-free-normal-cover-critical-exponent
+url: https://doi.org/10.5281/zenodo.22229561
 keywords:
   - Fuchsian group
   - critical exponent

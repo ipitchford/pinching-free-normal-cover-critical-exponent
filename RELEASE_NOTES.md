@@ -32,3 +32,6 @@ infinitely many distinct values.
 Candidate publication does not claim unaffiliated specialist validation,
 independent reconstruction, formal verification, external peer review,
 historical priority, or endorsement by the problem proposer or cited authors.
+
+Repository: <https://github.com/ipitchford/pinching-free-normal-cover-critical-exponent>
+Version DOI: <https://doi.org/10.5281/zenodo.22229561>

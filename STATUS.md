@@ -6,7 +6,9 @@
 **Internal replay:** revised deterministic and clean-directory gates pass.  
 **Internal editorial review:** PASS_WITH_NOTES after one five-role substantive round and one exact-archive domain confirmation.  
 **Independent assurance:** not assessed.  
-**Publication:** authorised and in progress; no public-release claim until repository, DOI, deployment, and canonical readback complete.
+**Repository:** <https://github.com/ipitchford/pinching-free-normal-cover-critical-exponent>
+**Reserved version DOI:** <https://doi.org/10.5281/zenodo.22229561>
+**Publication:** authorised and in progress; the DOI remains a draft until Zenodo publication, and no complete-release claim is made until deployment and canonical readback finish.
 
 The supported statement is the theorem in `CLAIM_SCOPE.md`. Under a broad
 group-deformation reading, Astala--Zinsmeister (1995) appears already to answer

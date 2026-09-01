@@ -1,16 +1,17 @@
 # Replay receipt
 
 Status: **PASS**  
-Captured: `2026-09-01T10:58:17Z`  
-Role: **post-repair confirmation target**  
+Captured: `2026-09-01T11:10:56Z`
+Role: **public-release payload replay**
 Assurance class: **producer-side deterministic replay**
 
-The repaired substantive manifest contains 53 files and has SHA-256
-`02ae4230854ef9f6caa49907e94b356ef24ad5686c97b77cf72f0ee6b6cc5e3f`.
-The exact inventory plus the manifest and receipt surfaces was extracted under
-`/tmp/aim0203-confirm.GnU6TV/replay`; `bash run_all.sh` passed. The captured
-replay output has SHA-256
-`734713e7ae14e7dd139bb33af2b58d170ad86c9dc213b4f688105b5542349df8`.
+The DOI-bearing public-release manifest contains 55 files and has SHA-256
+`80e2bff73e724e8dd915bfccf97c2145416f4293d56dcc02d058b357b9e5e34a`.
+The exact inventory plus the manifest and receipt surfaces was extracted in a
+newly created host temporary directory; `bash run_all.sh` passed. The captured
+replay output, after replacing only unittest's variable
+`Ran 16 tests in [0-9.]+s` lines with `Ran 16 tests in <elapsed>s`, has
+SHA-256 `fa63902f65b952735acca8c0ae8bb6a7628c07312b7dce6c7a6d91102b6a92bc`.
 
 The manifest excludes `MANIFEST.sha256`, `REPLAY_RECEIPT.md`, and
 `REPLAY_RECEIPT.json` to avoid circular hashing. The outer archive checksum
@@ -23,29 +24,29 @@ binds the complete ZIP.
 - theorem-critical LaTeX, Markdown, and claim-scope markers agreed;
 - PDF text, complete normalized-text digest, and raw-TeX leakage gates passed;
 - `qpdf` structural validation passed;
-- all 53 manifest entries were present and matched;
+- all 55 manifest entries were present and matched;
 - the package gate and complete read-only replay passed.
 
 ## Bound objects
 
 | Object | SHA-256 | Size/detail |
 |---|---|---|
-| `paper.pdf` | `cfe29bf42f5656aeaa91eb27c3469c2e21c71b17bb6dc9dc0cfc5d4f8bccdd4c` | 125,993 bytes; 9 A4 pages; untagged |
-| `paper.tex` | `eb0be745d45f52116f7ad9544f10fb64af83112c80aa4e91c47e325351c21f94` | canonical source |
-| `paper.md` | `5d620308a90293642c1743256da5fcce462a579b108b44608754c12b46d1dcee` | accessible-text fallback |
-| `MANIFEST.sha256` | `02ae4230854ef9f6caa49907e94b356ef24ad5686c97b77cf72f0ee6b6cc5e3f` | 53 payload entries |
+| `paper.pdf` | `99237675ba1a60d1ebd538c83a082cadfd39bc0cfbf3a2c8e91bcd6f03a91cc5` | 126,394 bytes; 9 A4 pages; untagged |
+| `paper.tex` | `47930c1c525972b93c7704d901590b2fa1204fc0f8f63d3363f3f0f315391227` | canonical source |
+| `paper.md` | `b409448ca63d4e0e0f5456e4e8bd5131c598ec191b72d4cbffb85a94adb75922` | accessible-text fallback |
+| `MANIFEST.sha256` | `80e2bff73e724e8dd915bfccf97c2145416f4293d56dcc02d058b357b9e5e34a` | 55 payload entries |
 
 ## Extraction convention
 
 - executable: `/opt/homebrew/bin/pdftotext`;
 - version: Poppler `pdftotext 26.01.0`;
 - command: `pdftotext -layout paper.pdf raw.txt`;
-- raw text: 31,307 bytes, SHA-256
-  `17a5e285d6323b59d5e70f4e22cf1ce997980b51d46e2eeb66f231b7bca84020`;
+- raw text: 31,375 bytes, SHA-256
+  `d9354b9f01d654de16259f9c314661bd39e60987e276d7952f71d7a05d8b0dfe`;
 - normalization: split on ASCII whitespace, join with one ASCII space, append
   one newline;
-- normalized text: 25,838 bytes, SHA-256
-  `1ef1c843fe658115f7905b850055b206bbc42bd51a15eb92bd9d7fd2fad517e9`.
+- normalized text: 25,905 bytes, SHA-256
+  `38e72f8d56e40e922b32e3b417274270fc50213d36fb0d5e89b606f75f5b0bff`.
 
 This supersedes the pre-editorial 43-file, 8-page, 14-test receipt.
 

@@ -13,6 +13,7 @@
     "access_right": "open",
     "version": "0.2.0-candidate",
     "publication_date": "2026-09-01",
+    "doi": "10.5281/zenodo.22229561",
     "keywords": [
       "Fuchsian groups",
       "critical exponent",
@@ -22,6 +23,14 @@
       "AIM Problem 4.3",
       "unrefereed all-Fuchsian strengthening candidate"
     ],
-    "related_identifiers": []
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/ipitchford/pinching-free-normal-cover-critical-exponent",
+        "relation": "isSupplementedBy",
+        "scheme": "url"
+      }
+    ],
+    "language": "eng",
+    "notes": "Unrefereed all-Fuchsian strengthening candidate; internal model-mediated editorial PASS_WITH_NOTES is not external specialist review, independent reconstruction, or peer review. Original code is MIT-licensed as stated in the package."
   }
 }
