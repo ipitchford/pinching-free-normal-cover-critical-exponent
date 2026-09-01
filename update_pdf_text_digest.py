@@ -9,6 +9,7 @@ import pathlib
 import shutil
 import subprocess
 import sys
+import unicodedata
 
 
 ROOT = pathlib.Path(__file__).resolve().parent
@@ -25,7 +26,9 @@ def normalized_pdf_text() -> bytes:
         check=True,
         capture_output=True,
     )
-    return b" ".join(proc.stdout.split()) + b"\n"
+    text = unicodedata.normalize("NFKC", proc.stdout.decode("utf-8"))
+    portable = "".join(text.split()).replace("-", "") + "\n"
+    return portable.encode("utf-8")
 
 
 def main() -> int:

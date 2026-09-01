@@ -6,10 +6,10 @@
   "role": "public-release payload replay",
   "assuranceClass": "producer-side deterministic replay",
   "cleanDirectory": "host-generated fresh temporary directory",
-  "normalizedReplayOutputSha256": "fa63902f65b952735acca8c0ae8bb6a7628c07312b7dce6c7a6d91102b6a92bc",
+  "normalizedReplayOutputSha256": "0acdb359c9def4be55c172a5a300bed54d2dd3a35808ffae1add806ccd5a18e0",
   "replayOutputNormalization": "Replace unittest lines matching 'Ran 16 tests in [0-9.]+s' with 'Ran 16 tests in <elapsed>s'; leave all other bytes unchanged.",
   "replayedManifest": {
-    "sha256": "d2500a9000574481a39ce036e0482eee19655ec3823f78595b69bbdb04ad9d52",
+    "sha256": "1cbdb35930c1c3a060a28c808cc947332d58592164e0db7efbdab804f97a39d2",
     "fileCount": 55,
     "convention": "All distributable payload files except MANIFEST.sha256, REPLAY_RECEIPT.md, and REPLAY_RECEIPT.json; exclusions avoid a circular seal. The outer archive checksum binds the complete ZIP."
   },
@@ -36,13 +36,13 @@
       "tagged": false
     },
     "paper.tex": {
-      "sha256": "47930c1c525972b93c7704d901590b2fa1204fc0f8f63d3363f3f0f315391227"
+      "sha256": "88bc93d6e790c0d49b0e0fde22046d93abb12ec84700c403c4577789d8dd9af0"
     },
     "paper.md": {
       "sha256": "b409448ca63d4e0e0f5456e4e8bd5131c598ec191b72d4cbffb85a94adb75922"
     },
     "PDF_TEXT.sha256": {
-      "sha256": "0d259cc4137754ab04206dbd019a99eb701beeb759e1b1165659018083e9323a"
+      "sha256": "79340c4ecc25543af89acfac83c4ba76f1439e122564555a41d2ed38c928a059"
     }
   },
   "textExtraction": {
@@ -51,9 +51,9 @@
     "command": "pdftotext -layout paper.pdf raw.txt",
     "rawBytes": 31375,
     "rawSha256": "d9354b9f01d654de16259f9c314661bd39e60987e276d7952f71d7a05d8b0dfe",
-    "normalization": "ASCII-whitespace split and single-space join, followed by one newline",
-    "normalizedBytes": 25905,
-    "normalizedSha256": "38e72f8d56e40e922b32e3b417274270fc50213d36fb0d5e89b606f75f5b0bff"
+    "normalization": "UTF-8 decode, Unicode NFKC, remove all Unicode whitespace and ASCII hyphens, append one newline",
+    "normalizedBytes": 20249,
+    "normalizedSha256": "d68586f0b9316b576ab662adbfb38f50994bbd0a359b0a7356c58034e4392d05"
   },
   "supersedes": "The pre-editorial 43-file, 8-page, 14-test receipt.",
   "claimCeiling": "Successful producer-side execution, PDF extraction, and payload completeness only; not independent reconstruction, specialist review, peer review, formal proof, or novelty determination."

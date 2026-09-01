@@ -23,6 +23,10 @@ jobs:
           tex-gyre fonts-texgyre fonts-texgyre-math
           latexmk poppler-utils qpdf
       - name: Rebuild reader PDF from source
-        run: bash build_paper.sh
+        run: |
+          rebuild_dir="$RUNNER_TEMP/paper-rebuild"
+          mkdir -p "$rebuild_dir"
+          git archive --format=tar HEAD | tar -xf - -C "$rebuild_dir"
+          (cd "$rebuild_dir" && bash build_paper.sh)
       - name: Run normal and optimized replay
         run: bash run_all.sh

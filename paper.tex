@@ -3,25 +3,39 @@
 \usepackage{fontspec}
 \usepackage{amsmath,amsthm,mathtools}
 \usepackage{unicode-math}
-\setmainfont[
-  UprightFont=texgyrepagella-regular.otf,
-  BoldFont=texgyrepagella-bold.otf,
-  ItalicFont=texgyrepagella-italic.otf,
-  BoldItalicFont=texgyrepagella-bolditalic.otf
-]{texgyrepagella-regular.otf}
-\setsansfont[
-  UprightFont=texgyreheros-regular.otf,
-  BoldFont=texgyreheros-bold.otf
-]{texgyreheros-regular.otf}
-\setmonofont{texgyrecursor-regular.otf}
-\setmathfont{texgyrepagella-math.otf}
+\IfFontExistsTF{TeX Gyre Pagella}{
+  \setmainfont{TeX Gyre Pagella}
+}{
+  \setmainfont[
+    UprightFont=texgyrepagella-regular.otf,
+    BoldFont=texgyrepagella-bold.otf,
+    ItalicFont=texgyrepagella-italic.otf,
+    BoldItalicFont=texgyrepagella-bolditalic.otf
+  ]{texgyrepagella-regular.otf}
+}
+\IfFontExistsTF{TeX Gyre Heros}{
+  \setsansfont{TeX Gyre Heros}
+}{
+  \setsansfont[
+    UprightFont=texgyreheros-regular.otf,
+    BoldFont=texgyreheros-bold.otf
+  ]{texgyreheros-regular.otf}
+}
+\IfFontExistsTF{TeX Gyre Cursor}{
+  \setmonofont{TeX Gyre Cursor}
+}{
+  \setmonofont{texgyrecursor-regular.otf}
+}
+\IfFontExistsTF{TeX Gyre Pagella Math}{
+  \setmathfont{TeX Gyre Pagella Math}
+}{
+  \setmathfont{texgyrepagella-math.otf}
+}
 \newfontfamily\zhfont[
-  Path=assets/fonts/,
-  UprightFont=NotoSerifCJKtc-Regular.otf
+  Path=assets/fonts/
 ]{NotoSerifCJKtc-Regular.otf}
 \newfontfamily\zhfontbold[
   Path=assets/fonts/,
-  UprightFont=NotoSerifCJKtc-Regular.otf,
   FakeBold=2
 ]{NotoSerifCJKtc-Regular.otf}
 \usepackage{booktabs,array,enumitem,microtype,xcolor}
